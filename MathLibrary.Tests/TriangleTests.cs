@@ -49,5 +49,19 @@ namespace MathLibrary.Tests
 
             Triangle.GetArea(sideA, sideB, sideC, sigma);
         }
+        
+        [ExpectedException(typeof(Exception), "Exception \"Triangle with given sides does not exist!\" was not thrown!")]
+        [TestMethod]
+        public void GetArea_TriangleCantExist_ExceptionTrown()
+        {
+            double sideA = 3;
+            double sideB = 4;
+            double sideC = 1;
+
+            double sigma = 0;
+
+            Triangle.GetArea(sideA, sideB, sideC, sigma);
+
+        }
     }
 }
